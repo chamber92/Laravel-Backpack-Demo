@@ -494,11 +494,12 @@ class MonsterCrudController extends CrudController
         // Please check out: https://laravel-backpack.readme.io/docs/crud#revisions
         // $this->crud->allowAccess('revisions');
 
-        $this->crud->enableAjaxTable();
-
         // ------ DATATABLE EXPORT BUTTONS
         // Show export to PDF, CSV, XLS and Print buttons on the table view.
         // Does not work well with AJAX datatables.
+
+        $this->crud->enableBulkActions();
+        $this->crud->addBulkDeleteButton();
         $this->crud->enableExportButtons();
 
         // ------ FILTERS
